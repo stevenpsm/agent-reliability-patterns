@@ -1,5 +1,7 @@
 # 长会话 Agent 可靠性护栏
 
+[English](long-session-reliability-guardrails.en.md) | 简体中文
+
 用途：复制到 system prompt、`AGENTS.md` 或项目执行契约。按任务选择必要规则，避免重复注入。
 
 ## 1. 汇报

@@ -1,5 +1,7 @@
 # Agent 执行控制护栏
 
+[English](execution-control-guardrails.en.md) | 简体中文
+
 用途：按需复制到 system prompt、`AGENTS.md` 或任务执行契约。它补充通用的[长会话可靠性护栏](long-session-reliability-guardrails.md)，重点约束基线验证、重试、诊断、长期进程和时间预算。
 
 ## 1. 最小基线
