@@ -24,7 +24,7 @@ templates/   新增观察与复现实验的文档模板
 - [GLM-5.3 + pi 长会话中的六类可靠性不足模式](patterns/glm-5.3-pi-long-session-failure-modes.md)
 - [长会话 Agent 可靠性护栏（可注入短版）](guardrails/long-session-reliability-guardrails.md)
 
-第二个案例来自一次 Kimi + pentest-agent 长会话中的执行控制故障链：
+第二个案例来自一次 Kimi K3 + pentest-agent 长会话中的执行控制故障链：
 
 - [现场案例：SSH 转发、重复检查与子进程阻塞](cases/2026-09-29-kimi-pentest-agent-execution-failures.md)
 - [模式抽象：零证据重试、基线前复杂化与生命周期错配](patterns/kimi-pentest-agent-long-session-execution-failures.md)
