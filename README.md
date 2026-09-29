@@ -12,8 +12,10 @@ Field notes, failure patterns, and practical guardrails for long-running LLM age
 ## 仓库结构
 
 ```text
+cases/       脱敏后的现场时间线、命令证据、因果链和计量口径
 patterns/    带适用范围和证据边界的模型/Harness 观察记录
 guardrails/  可复制到 system prompt、AGENTS.md 或项目契约的短规则
+evals/       可重复运行的对照场景、通过条件和评价指标
 templates/   新增观察与复现实验的文档模板
 ```
 
@@ -21,6 +23,27 @@ templates/   新增观察与复现实验的文档模板
 
 - [GLM-5.3 + pi 长会话中的六类可靠性不足模式](patterns/glm-5.3-pi-long-session-failure-modes.md)
 - [长会话 Agent 可靠性护栏（可注入短版）](guardrails/long-session-reliability-guardrails.md)
+
+第二个案例来自一次 Kimi + pentest-agent 长会话中的执行控制故障链：
+
+- [现场案例：SSH 转发、重复检查与子进程阻塞](cases/2026-09-29-kimi-pentest-agent-execution-failures.md)
+- [模式抽象：零证据重试、基线前复杂化与生命周期错配](patterns/kimi-pentest-agent-long-session-execution-failures.md)
+- [执行控制护栏](guardrails/execution-control-guardrails.md)
+- [执行控制评测场景](evals/execution-control-scenarios.md)
+
+## 产出流程
+
+```text
+现场案例 → 模式候选 → 可注入护栏 → 对照评测 → 状态晋级或证伪
+```
+
+1. `cases/` 先保存发生了什么，保留时间线、证据单位和因果依赖；
+2. `patterns/` 再回答哪些行为可能跨任务复现，明确命中与排除条件；
+3. `guardrails/` 将缓解措施压缩为可以执行和检查的短规则；
+4. `evals/` 固定输入、变量、指标和门槛，比较有无护栏的差异；
+5. 根据复现结果更新状态，不因一次案例直接声称跨模型成立。
+
+新增现场记录时复制[现场案例模板](templates/case-observation-template.md)；形成可泛化假设后再使用[模式研究模板](templates/pattern-study-template.md)。
 
 ## 为什么不直接把研究文档命名为 `AGENTS.md`
 
@@ -56,4 +79,3 @@ templates/   新增观察与复现实验的文档模板
 ## 新增案例
 
 复制 [模式研究模板](templates/pattern-study-template.md)，记录模型、Harness、任务长度、工具权限、上下文策略、复现步骤、观察证据和评价指标。优先提交能够被第三方复现或反驳的材料。
-
